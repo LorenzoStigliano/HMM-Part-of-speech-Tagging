@@ -1,0 +1,17 @@
+a1a=['.', 'ADJ', 'ADP', 'ADV', 'CONJ', 'DET', 'NOUN', 'NUM', 'PRON', 'PRT', 'VERB', 'X']
+a1b=2649
+a1c=12.059885650136557
+a1d='function'
+a2a=13
+a2b=2.4630453700815003
+a4a3=0.8689827219809665
+a4b1=[("I'm", 'PRT'), ('useless', 'ADJ'), ('for', 'ADP'), ('anything', 'NOUN'), ('but', 'CONJ'), ('racing', 'ADJ'), ('cars', 'NOUN'), ('.', '.')]
+a4b2=[("I'm", 'PRT'), ('useless', 'ADJ'), ('for', 'ADP'), ('anything', 'NOUN'), ('but', 'ADP'), ('racing', 'VERB'), ('cars', 'NOUN'), ('.', '.')]
+a4b3='The tagger thought that "racing" was an ADJ but it is a VERB and \'but\' CONJ\nbut it is a ADP and so the tagger got this incorrect beacuse but is very rare\nfor but to be and ADP so the elprob was much greater for CONJ for "but".As a\nresult after CONJ its more likely to see a ADJ.'
+a4c=56.63057530953183
+a4d=308.71227854747974
+a4e=['DET', 'NOUN', 'ADP', 'DET', 'NOUN', 'VERB', 'ADV']
+a5='To ensure that the grammar produces any well-formed sentence,we use the POS\ntagger to tag all the words and so we can create a constituency tree of the sentence\nbased solely on the POS instead of the words.This approach will result in better\nresults for the original parser because of unseen words the parser will try to\ncreate a constituency tree,in the other case for unseen words it would not make a\ntree even though the word is the correct POS for a sentence.'
+a6='To get better estimates for the emission and transition probabilities.\nThe B.Corpus tagset has 87 tags.This means that the taggers accuracy would\nhave been considerbly worse.This is due to the fact that each word can now take\non 87 differnet tags so we are more likely to not see some tags and word\ncombinations in the training set and so a lot of the emission probabilities\nwill be close to 0 even though they do exist. So the POS tag would be incorrect.\nSimilarly for transition probabilities.'
+a3c=16.79319240474419
+a3d='DET'
