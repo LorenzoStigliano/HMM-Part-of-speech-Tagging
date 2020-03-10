@@ -166,7 +166,12 @@ class HMM:
 
         # The data structures I used for the vietrbi and backpointer variables where
         # 2D arrays where the length of the inner array was the size of the vocabulary
-        # and the length of the variables where the number of steps.
+        # and the number of arrays the number of steps.Where each array is a
+        # step and every entry in the array is the state.Example:
+        # [[]    <-- Step 1
+        #  []    <-- Step 2
+        #  []    <-- Step 3
+        #  []]   <-- Step 4
 
         # For the viterbi data structure the entry self.viterbi[n][0] will be the
         # cost for the nth step at the self.state[0] which in our case would be "DET".
@@ -234,21 +239,20 @@ class HMM:
 
         # Add a termination step with cost based solely on cost of transition to </s> , end of sentence.
 
-        # This is the last pointer which is the index to the postionj in the backpointer
+        # This is the last pointer which is the index to the postion in the backpointer
         # which to corresponds to the smallest cost from the last row in the viterbi
         # variable to the end of the sentence.
 
         last_pointer = 0
-        for s in self.states:
-            min_cost = self.viterbi[T-1][0]-(self.tlprob(self.states[0],"</s>"))
-            pointer = 0
-            for s_prime in range(1,N):
-                cost = self.viterbi[T-1][s_prime]-(self.tlprob(self.states[s_prime],"</s>"))
-                if cost < min_cost:
-                    min_cost = cost
-                    pointer = s_prime
-            # last_pointer for step T which has the lowest cost.
-            last_pointer = pointer
+        min_cost = self.viterbi[T-1][0]-(self.tlprob(self.states[0],"</s>"))
+        pointer = 0
+        for s_prime in range(1,N):
+            cost = self.viterbi[T-1][s_prime]-(self.tlprob(self.states[s_prime],"</s>"))
+            if cost < min_cost:
+                min_cost = cost
+                pointer = s_prime
+        # last_pointer for step T which has the lowest cost.
+        last_pointer = pointer
 
         # Reconstruct the tag sequence using the backpointer list.
         # Return the tag sequence corresponding to the best path as a list.
