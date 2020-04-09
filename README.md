@@ -1,4 +1,4 @@
-# HMM-Part-of-speech-Tagging
+# HMM and Part-of-speech Tagging
 This is my assignment for the FNLP course (Foundations of Natural Language Processing) at the University of Edinburgh.
 # Introduction
 This assignment will make use of the Natural Language Tool Kit (NLTK) for Python. NLTK is a platformfor writing programs to process human language data, that provides both corpora and modules. The assignment is split into 2 sections: Section 1 - Training a Hidden Markov Model and Section 2 - Implementation of the Viterbi Algorithm.
